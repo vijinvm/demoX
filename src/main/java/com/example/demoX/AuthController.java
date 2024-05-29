@@ -16,13 +16,10 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
-        // Authenticate admin
         Admin admin = adminService.authenticate(request.getUsername(), request.getPassword());
         if (admin == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
         }
-
-        // Return successful response
         return ResponseEntity.ok().body("Login successful");
     }
 }
