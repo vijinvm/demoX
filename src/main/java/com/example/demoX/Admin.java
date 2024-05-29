@@ -13,8 +13,6 @@ public class Admin {
     private String username;
     private String password;
 
-    // Constructors, getters, and setters
-    // Constructors
     public Admin() {
     }
 
